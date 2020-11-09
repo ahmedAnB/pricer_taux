@@ -24,6 +24,7 @@ namespace WpfApp1.ViewModels
             Dictionary<String, List<double>> baseDonnee = dataBase.GetBaseDonnee();
             foreach (string name in arrayNames)
             {
+                //chargement des données
                 baseDonnee.TryGetValue(name, out value_list);
                 list_yield.Add(new YieldCurve(name, value_list));
                 names.Add(name);

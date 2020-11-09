@@ -18,7 +18,9 @@ namespace WpfApp1.Models
             this.rendement = rendement;
             this.nominal = _nominal;
         }
-
+        /*
+         * Methode pour le calcul du taux ZC correspondant
+         */
         public abstract double Rendement_zc();
 
     }

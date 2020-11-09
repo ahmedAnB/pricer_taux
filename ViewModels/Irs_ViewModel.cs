@@ -43,7 +43,9 @@ namespace WpfApp1.ViewModels
             this.tx_variable_recu = _tx_var;//-1 ou 1
         }
 
-
+        /*
+         * Calcul le prix du swap de taux
+         */
         public double Price()
         {
             int nb_calcul = (int)duree * nb_composition;
@@ -55,6 +57,7 @@ namespace WpfApp1.ViewModels
             Console.WriteLine("l43 " + nb_calcul);
             foreach(double t in taux_variable)
             {
+                //calcul le taux forward equivalent
                 taux_spot tw = new taux_spot(duree, t, nominal);
                 Console.WriteLine(duree + " " + t + " " + nominal);
                 taux_zc.Add(tw.Rendement_zc());
@@ -63,6 +66,7 @@ namespace WpfApp1.ViewModels
             int j = 0;
             for(int i = 0; i < nb_calcul-1; i++)
             { 
+                //calcul les flux pour la jambe fixe
                 cf_fixe = cf_fixe + Math.Exp(-1*taux_zc[i] *d_factor);
                 d_factor = d_factor + 12 / jambe_fixe.frequence;
                 Console.WriteLine("55 " + cf_fixe);

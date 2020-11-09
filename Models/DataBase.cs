@@ -9,6 +9,9 @@ namespace WpfApp1.Models
 {
     class DataBase
     {
+        /*
+         * Classe de Gestion de la base de donnée pour l'affichage des courbes
+         */
         Dictionary<String, List<double>> baseDonnee = new Dictionary<string, List<double>>();
         
         public List<String> Dates { get; set; }
@@ -52,7 +55,6 @@ namespace WpfApp1.Models
                     foreach(string value in values)
                     {
                         baseDonnee.TryGetValue(names[index], out value_list);
-                        //Console.WriteLine("Affichage value : " + value);
                         if (index == 0)
                         {
                             Dates.Add(value);
@@ -60,16 +62,8 @@ namespace WpfApp1.Models
                         else
                         { 
                             x = Convert.ToDouble(value);
-                            //Console.WriteLine("valeur x :" + x);
                             value_list.Add(x);
                         }
-                        /*
-                        Console.WriteLine(" Affichage " + names[index]);
-                        foreach(var e in value_list)
-                        {
-                            Console.WriteLine(e);
-                        }
-                        */
                         index++;
                     }
                 }

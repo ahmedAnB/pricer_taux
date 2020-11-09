@@ -26,13 +26,9 @@ namespace WpfApp1.Views
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Appuye");
-        }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            //Recupere les parametre pour le swap
             int freqV = 0;
             try
             {
@@ -118,6 +114,7 @@ namespace WpfApp1.Views
                 taux_vx = -1;
             }
             int nb_compo = 1;
+            //Calcul le prix du swap
             Irs_ViewModel irs_ = new Irs_ViewModel(nb_compo, nominal, duree, echeance, lbase, jfVM.jambe, jvVM.jambe, taux_vx);
             irs_.Affichage();
             bx_result.Text = irs_.Price().ToString();

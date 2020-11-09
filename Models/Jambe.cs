@@ -16,9 +16,6 @@ namespace WpfApp1.Models
         {
             this.liste_taux = ltaux;
             this.frequence = lfrequence;
-        }
-
-
-        
+        }   
     }
 }

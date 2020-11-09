@@ -12,7 +12,6 @@ namespace WpfApp1.ViewModels
         public taux tx { get; set; }
         public taux_viewModel(int periode_debut, int periode_placemnt, double rendement, int _nominal)
         {
-            //Console.WriteLine("nominal vm : " + _nominal);
             if (periode_debut == 0)
             {
                 this.tx = new taux_spot(periode_placemnt, rendement, _nominal);
